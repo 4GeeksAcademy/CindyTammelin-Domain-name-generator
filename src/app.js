@@ -4,13 +4,23 @@ let noun = ['jogger', 'racoon'];
 let ext = ['.com'];
 
 
+let htmlResultados = '<ul>';
+
 for (let p = 0; p < pronoun.length; p++) {
   for (let a = 0; a < adj.length; a++) {
     for (let n = 0; n < noun.length; n++) {
       for (let e = 0; e < ext.length; e++) {
         let dominio = pronoun[p] + adj[a] + noun[n] + ext[e];
         console.log(dominio);
+        
+        
+        htmlResultados += `<li>${dominio}</li>`;
       }
     }
   }
 }
+
+htmlResultados += '</ul>';
+
+
+document.body.innerHTML += htmlResultados;
